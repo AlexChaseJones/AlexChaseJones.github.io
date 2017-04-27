@@ -1,8 +1,8 @@
 const HEADER = 'Intersection';
-const NUMBER_OF_LINES = 1580;
-const MAX_LINE_HEIGHT = 1420;
-const PAGE_WIDTH = 1080;
-const PAGE_HEIGHT = 1920;
+const NUMBER_OF_LINES = 1200;
+const MAX_LINE_HEIGHT = 800;
+const PAGE_WIDTH = 540;
+const PAGE_HEIGHT = 960;
 const LINE_SPEED = 7;
 const COLORS = ['rgba(251,229,0,1)','rgba(93,199,242,1)', 'rgba(77,171,71,1)', 'rgb(103,104,109)']
 
@@ -14,19 +14,19 @@ function init() {
 
 function draw() {
   var ctx = document.getElementById('canvas').getContext('2d');
-  ctx.clearRect(0, 0, 1080, 1920);
+  ctx.clearRect(0, 0, 540, 960);
 
   drawLines(ctx);
 
-  ctx.font="100px HelveticaNeue-medium";
+  ctx.font="50px HelveticaNeue-medium";
   ctx.fillStyle = COLORS[3];
-  ctx.fillText(HEADER,185,470);
+  ctx.fillText(HEADER,100,240);
   ctx.fillStyle = COLORS[1]
-  ctx.fillRect(90, 400, 70, 70);
+  ctx.fillRect(55, 205, 35, 35);
   ctx.fillStyle = COLORS[0]
-  ctx.fillRect(30, 400, 70, 70);
+  ctx.fillRect(20, 205, 35, 35);
   ctx.fillStyle = COLORS[2]
-  ctx.fillRect(87, 400, 18, 70);
+  ctx.fillRect(52, 205, 9, 35);
 
   window.requestAnimationFrame(draw);
 }
@@ -37,7 +37,7 @@ const drawLines = (ctx) => {
 	  const { fillStyle, x, width, height } = lines[i];
 
 	  ctx.fillStyle = fillStyle;
-	  ctx.fillRect(x, 1920, width, -height);
+	  ctx.fillRect(x, 960, width, -height);
 	  ctx.fillRect(x, 0, width, (height / 4));
 	}
 }
@@ -54,5 +54,3 @@ const updateLine = (index) => {
 
 	lines[index].height += LINE_SPEED;
 }
-
-init();

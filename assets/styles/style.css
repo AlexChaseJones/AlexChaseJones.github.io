@@ -1,14 +1,64 @@
+/*GLOBAL STYLES*/
 body {
-  background: #FFF
+  background-color: #e2e1e0;
 }
 
-svg {
+#header {
+  width: 150px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 2px;
+  height: 90%;
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin-top: 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  z-index: 100;
+}
+
+#header h1 {
+  font-size: 25px;
+  font-family: helveticaNeue;
+  font-weight: lighter;
+  padding-bottom: 25px;
+  margin: 15px;
+}
+
+#navigation ul {
+  list-style: none;
+  font-family: helveticaNeue;
+  padding-left: 0; 
+  float: left;
+}
+
+li {
+  text-align: center;
+  padding: 20px;
+  width: 85px;
+  background-color: #fff;
+  margin: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+}
+
+li:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#animationSpace {
+  position: absolute;
+  left: 500px;
+  top: 50px;
+}
+
+/*SVG STYLES*/
+svg {
+  top: 200px;
+  position: relative;
+  transform: scale(3);
 }
 
 #IntersectionBackcolor {
@@ -114,3 +164,5 @@ svg {
     stroke-width: 0px;
   }
 }
+
+/*CANVAS STYLES*/
