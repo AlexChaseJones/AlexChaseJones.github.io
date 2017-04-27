@@ -1,0 +1,12 @@
+body { 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: none;
+  height: 1920px;
+  width: 1080px;
+}
+
+#content {
+  /*background: radial-gradient(rgba(251,229,0,.8),rgba(93,199,242,.8),rgba(77,171,71,.8));*/
+}

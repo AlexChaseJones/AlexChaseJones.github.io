@@ -1,0 +1,116 @@
+body {
+  background: #FFF
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#IntersectionBackcolor {
+  color: rgba(103,104,108, 1);
+  opacity: 0;
+  animation: 5s unhide forwards;
+}
+
+#Intersection g path {
+  stroke-width: 2px;
+  opacity: 1;
+  stroke: #67686C;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  fill: none;
+  transform-origin: center;
+  animation: 5s textAnimation forwards;
+  animation-delay: 1.5s;
+}
+
+#yellowArea {
+  opacity: 0;
+  animation: 1.5s slideLeft forwards;
+  animation-timing-function: cubic-bezier(.73,1.09,.71,1.2)
+}
+
+#blueArea {
+  opacity: 0;
+  animation: 1.5s slideRight forwards;
+  animation-timing-function: cubic-bezier(.73,1.09,.71,1.2);
+}
+
+#greenArea {
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: .75s grow forwards;
+  animation-delay: .75s;
+  animation-timing-function: cubic-bezier(.73,1.09,.71,1.2);;
+}
+
+@keyframes unhide {
+  0% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+  85% {
+    transform: scaleX(1.5);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+     opacity: 0;
+     stroke-dashoffset: 100;
+     transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(0px);
+    stroke-dashoffset: 0;
+    fill: none;
+    stroke-width: 0px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    stroke-dashoffset: 0;
+    stroke-width: 0px;
+  }
+}
