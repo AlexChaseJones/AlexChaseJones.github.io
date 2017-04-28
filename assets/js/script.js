@@ -1,18 +1,22 @@
 window.onload = function() {
 	var animationSpace = window.document.getElementById('animationSpace');
+	var webglSpace = window.document.getElementById('webglSpace');
 
 	var svgButton = window.document.getElementById('svgSelector');
 	svgButton.addEventListener("click", function() {
+		webglSpace.setAttribute('style', 'display: none');
 		animationSpace.innerHTML = SVG_DATA;
 	})
 	var canvasButton = window.document.getElementById('canvasSelector');
 	canvasButton.addEventListener("click", () => {
+		webglSpace.setAttribute('style', 'display: none');
 		animationSpace.innerHTML = CANVAS_DATA;
 		init();
 	})
 	var webGLButton = window.document.getElementById('webGLSelector');
 	webGLButton.addEventListener("click", function() {
-
+		animationSpace.innerHTML = '';
+		webglSpace.setAttribute('style', 'display: show');
 	})
 }
 
